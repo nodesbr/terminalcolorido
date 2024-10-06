@@ -1,0 +1,83 @@
+#=============================================#
+# Aliases para uso do nodes2016/2024          =
+#=============================================#
+ update="echo Realizando um UPDATE padrão... && sudo apt-get update && echo Pronto."
+   #= faz um update sem erros =#
+ update2="echo Realizando um UPDATE sem erros... && sudo apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update && echo Pronto, mano."
+
+ upgrade="echo Um UPGRADE será feito... && sudo apt-get upgrade"
+ atualizar-tudo="echo FULL-UPGRADE não recomendado... && read && sudo apt-get update && sudo apt-get full-upgrade && echo Meu Deus, espero mesmo que tenha funcioando para você."
+
+ atualizar="echo Primeiro um UPDATE... && sudo apt-get update && echo Agora um UPGRADE... && sudo apt-get upgrade -y && echo Sistema atualizado com sucesso."
+ atualizar2="echo Primeiro um UPDATE ignorando os ERROS... && sudo apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false update && echo E agora um UPGRADE-y... && sudo apt-get upgrade -y && echo Sistema atualizado com sucesso, mas ignorando os erros"
+
+ atualizar-distro="echo DIST-UPGRADE não recomendado... && read && sudo apt-get update && sudo apt-get dist-upgrade && echo Meu Deus, espero mesmo que tenha funcioando para você."
+
+ instalar="echo Vamos instalar um programa... && sudo apt-get install"
+ remover="echo Quer mesmo remover esse programa? && sudo apt-get remove"
+ arrancar="echo Removendo com um ---PURGE REMOVE. Cuidado! && sudo apt-get --purge remove"
+ reinstalar="echo Comando de reinstalação de programas. && sudo apt-get install --reinstall"
+
+ lista="echo abrindo SOURCES.LIST... && sudo xed /etc/apt/sources.list"
+ reparar-dpkg="echo Configurando o DPKG com defeito... && sudo dpkg --configure -a && echo E ai, deu certo?"
+ reparar-instalacao="echo Tentando reparar com um INSTALL-F... && sudo apt-get install -f && echo E ai, deu certo?"
+ limpar-cache="echo Removendo instaladores baixados e inuteis... && sudo apt-get clean && echo Tudo Limpo."
+ autoremover="echo autoremovendo pacotes inuteis de programas... && sudo apt-get autoremove && echo Removidos com sucesso."
+
+ remover-orfas="echo = Remover biliotecas orfãs? Ctrl+C para cancelar. && read && sudo deborphan | xargs sudo apt-get -y remove --purge"
+ remover-orfas2="echo = Remover dados de biliotecas orfãs? Ctrl+C para cancelar. && read && sudo deborphan --guess-data | xargs sudo apt-get -y remove --purge"
+
+ trocardono="echo = Para trocar o dono da pasta use: sudo chown -R userX:userX /home/userX"
+
+ swap="echo = Ver se a Prioridade atual é = a 60. && echo cat /proc/sys/vm/swappiness && echo && echo Definir temporariamente a 10. && echo sudo sysctl vm.swappiness=10 && echo && echo Prioridade 10 Definitiva. && echo sudo gedit /etc/sysctl.conf && echo && echo Adicione a linha no final. && echo vm.swappiness=10"
+
+ hora="echo horast= status, horautc= Horario universal, horarg= regiões disponiveis, horacv= Cape_Verde."
+ horast="timedatectl status"
+ horautc="timedatectl set-timezone UTC"
+ horarg="timedatectl list-timezones |  egrep  -o "America/N.*""
+ horacv="timedatectl set-timezone "Atlantic/Cape_Verde""
+
+ internet="ifconfig"
+ usuario="whoami"
+ abrir="cd"
+ voltar="cd .."
+ ver="ls"
+ ver-tudo="ls -la"
+ limpar="clear"
+ ajuda="help"
+ sistema="neofetch"
+ tutor="cat ~/.tutor"
+
+ zip-conky="zip -r NDS2016-ThemePack.cmtp.7z conkyzipado"
+ zipar="zip -r Arquivo.zipado.zip"
+
+#=============================================#
+# - Ferramentas Hackers -- 2024 update code - #
+#=============================================#
+
+ scanrede="nmap -sP 192.168.31.0/24"
+ scanmaquinas="sudo nmap -sS -O -T3 -oA invent 192.168.31.0/24"
+
+ pararede="sudo service NetworkManager stop"
+
+ iniciarede="sudo service NetworkManager start"
+
+ reiniciarede="sudo service NetworkManager restart"
+
+ pararmodomonitor="sudo airmon-ng stop wlan0mon"
+
+ iniciarmodomonitor="sudo airmon-ng start wlan0mon"
+#=============================================#
+# - Ferramentas Hackers -- 2024 update code - #
+#=============================================#
+ 
+ resetar-usuario="echo Limpar usuário? Ctrl+C para cancelar. && read && mkdir ~/DocSalvos && cp -f -r .* ~/DocSalvos && rm -rf .*"
+
+ matar="killall"
+ matador="echo Clique em um programa aberto. && xkill"
+
+ fechar="exit"
+ reiniciar="echo O PC será reiniciado em 10s. && sleep 10 && echo Pressione Ctrl+C para Cancelar && sudo halt"
+#=============================================#
+# - Final dos Alias do Nodes de Atualização - #
+#=============================================#
